@@ -1,0 +1,1755 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portafolio de Julio Vélez, diseñador gráfico.">
+<title>Julio Vélez | Portafolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --dark: #19251F;
+  --dark2: #25372D;
+  --green: #405B47;
+  --green2: #607C60;
+  --sage: #A9B99B;
+  --lime: #D0DF69;
+  --cream: #F1EBDD;
+  --cream2: #E5DDCA;
+  --gray: #A6A89C;
+  --ink: #292E29;
+  --line: rgba(241,235,221,.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--dark);
+}
+
+/* NAVEGACIÓN */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6%;
+  background: rgba(25,37,31,.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  color: var(--cream);
+}
+
+.logo span {
+  color: var(--lime);
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--cream2);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--lime);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--cream);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  color: var(--cream);
+  padding: 150px 7% 75px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: var(--green);
+  right: -180px;
+  top: 80px;
+  opacity: .65;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 1px solid rgba(208,223,105,.35);
+  right: 80px;
+  top: 220px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+}
+
+.eyebrow {
+  color: var(--lime);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: clamp(65px, 11vw, 150px);
+  line-height: .95;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--lime);
+  font-weight: 300;
+  font-size: .78em;
+  letter-spacing: .055em;
+  margin-top: 14px;
+  padding-left: 9px;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-top: 65px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-description {
+  max-width: 420px;
+  color: var(--cream2);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.hero-number {
+  color: var(--lime);
+  font-size: 12px;
+  letter-spacing: .15em;
+  line-height: 1.8;
+}
+
+.hero-orbit {
+  position: absolute;
+  right: 12%;
+  bottom: 15%;
+  z-index: 2;
+  color: var(--lime);
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  opacity: .8;
+  transform: rotate(-18deg);
+}
+
+/* BOTONES */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--lime);
+  color: var(--dark);
+  padding: 16px 23px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: .3s;
+  border: 1px solid var(--lime);
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--lime);
+  transform: translateY(-4px);
+}
+
+/* SECCIONES */
+
+.section {
+  padding: 110px 7%;
+}
+
+.section-dark {
+  background: var(--dark2);
+  color: var(--cream);
+}
+
+.section-green {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.section-cream {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  font-size: 11px;
+  color: var(--green2);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.section-dark .section-label,
+.section-green .section-label {
+  color: var(--lime);
+}
+
+.section-heading h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(42px, 6vw, 76px);
+  letter-spacing: -.07em;
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.section-heading h2 em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+/* PERFIL */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.profile-text {
+  font-size: clamp(19px, 2.3vw, 27px);
+  line-height: 1.55;
+  max-width: 650px;
+  font-weight: 400;
+}
+
+.profile-text strong {
+  color: var(--green2);
+  font-weight: 800;
+}
+
+.profile-side {
+  background: var(--sage);
+  color: var(--dark);
+  padding: 42px;
+  position: relative;
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.profile-side::after {
+  content: "J";
+  position: absolute;
+  right: -5px;
+  bottom: -105px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 350px;
+  font-weight: 800;
+  line-height: 1;
+  opacity: .12;
+}
+
+.profile-side p,
+.profile-side span {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-side p {
+  max-width: 240px;
+  line-height: 1.7;
+}
+
+.profile-side span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* ENFOQUE */
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(241,235,221,.2);
+}
+
+.focus-card {
+  padding: 40px 32px;
+  background: var(--dark2);
+  min-height: 260px;
+  transition: .35s;
+}
+
+.focus-card:hover {
+  background: var(--green);
+  transform: translateY(-8px);
+}
+
+.focus-card .number {
+  color: var(--lime);
+  font-size: 12px;
+  letter-spacing: .15em;
+}
+
+.focus-card h3 {
+  font-size: 24px;
+  margin: 45px 0 15px;
+  letter-spacing: -.04em;
+}
+
+.focus-card p {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* PROYECTOS */
+
+.projects-section {
+  background: var(--cream2);
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+
+.filter-btn {
+  border: 1px solid var(--green);
+  background: transparent;
+  color: var(--green);
+  padding: 11px 17px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 10px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 25px;
+  align-items: start;
+}
+
+.project-card {
+  cursor: pointer;
+  min-width: 0;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+/* IMÁGENES SIN RECORTES NI MÁRGENES INTERNOS */
+
+.project-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--cream2);
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  transition: opacity .3s ease;
+}
+
+.project-card:hover .project-image img {
+  opacity: .88;
+}
+
+.project-image::after {
+  content: "VER PROYECTO ↗";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 15px;
+  background: var(--lime);
+  color: var(--dark);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .3s;
+  pointer-events: none;
+}
+
+.project-card:hover .project-image::after,
+.project-card:focus-visible .project-image::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 5px;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding-top: 18px;
+  gap: 15px;
+}
+
+.project-info h3 {
+  font-size: 23px;
+  letter-spacing: -.04em;
+}
+
+.project-info p {
+  color: #77796F;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.project-index {
+  font-size: 12px;
+  color: var(--green);
+  font-weight: 800;
+}
+
+/* NUEVO APARTADO DE BEHANCE */
+
+.behance-invite {
+  margin-top: 85px;
+  padding: clamp(32px, 5vw, 70px);
+  background: var(--dark);
+  color: var(--cream);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.behance-invite::after {
+  content: "Bē";
+  position: absolute;
+  right: 15px;
+  bottom: -100px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(170px, 23vw, 340px);
+  font-weight: 800;
+  letter-spacing: -.1em;
+  opacity: .07;
+  pointer-events: none;
+}
+
+.behance-content {
+  position: relative;
+  z-index: 2;
+  max-width: 670px;
+}
+
+.behance-label {
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.behance-invite h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(32px, 4.5vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -.065em;
+  margin-bottom: 25px;
+}
+
+.behance-invite h3 em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: var(--lime);
+}
+
+.behance-description {
+  color: var(--cream2);
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.behance-button {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ÁREAS DE TRABAJO */
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.area {
+  padding: 30px 25px 30px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: .3s;
+}
+
+.area:nth-child(3n+2),
+.area:nth-child(3n+3) {
+  padding-left: 25px;
+}
+
+.area h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.area span {
+  color: var(--lime);
+  font-size: 20px;
+  transition: .3s;
+}
+
+.area:hover h3 {
+  color: var(--lime);
+}
+
+.area:hover span {
+  transform: translate(5px,-5px);
+}
+
+/* CONTACTO */
+
+.contact {
+  background: var(--lime);
+  color: var(--dark);
+  padding: 110px 7%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::after {
+  content: "HOLA";
+  position: absolute;
+  right: -15px;
+  bottom: -90px;
+  font-size: clamp(150px, 25vw, 340px);
+  font-weight: 800;
+  letter-spacing: -.1em;
+  opacity: .09;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 2;
+}
+
+.contact h2 {
+  font-size: clamp(55px, 9vw, 120px);
+  line-height: .98;
+  letter-spacing: -.08em;
+  max-width: 850px;
+}
+
+.contact h2 em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.contact p {
+  margin: 35px 0;
+  max-width: 400px;
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact-links a {
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark);
+  color: var(--cream);
+  padding: 28px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+footer p {
+  color: var(--gray);
+  font-size: 11px;
+}
+
+.footer-logo {
+  font-weight: 800;
+  letter-spacing: .15em;
+  font-size: 14px;
+}
+
+/* MODAL CON IMAGEN COMPLETA */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(15,22,18,.96);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--cream);
+  color: var(--dark);
+  width: min(1100px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  position: relative;
+  animation: appear .3s ease;
+}
+
+.modal-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  margin: 12px 12px -56px 0;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--dark);
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image-container {
+  width: 100%;
+  background: var(--dark2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 70dvh;
+  object-fit: contain;
+}
+
+.modal-details {
+  padding: 28px 38px 38px;
+}
+
+.modal-content h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 15px;
+  letter-spacing: -.04em;
+}
+
+.modal-content p {
+  line-height: 1.8;
+  color: #66695F;
+}
+
+.modal-category {
+  color: var(--green2);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  margin-bottom: 12px;
+}
+
+/* ANIMACIONES */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .area:nth-child(n) {
+    padding: 25px 12px;
+  }
+
+  .hero-orbit {
+    right: 8%;
+    bottom: 22%;
+    font-size: 65px;
+  }
+
+  .behance-invite {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 18px 6%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    padding: 25px 6%;
+    background: var(--dark);
+    flex-direction: column;
+    gap: 23px;
+    border-top: 1px solid var(--line);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 90vh;
+    padding: 130px 7% 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(55px, 15vw, 85px);
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .hero-orbit {
+    display: none;
+  }
+
+  .section {
+    padding: 75px 7%;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 40px;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area:nth-child(n) {
+    padding: 22px 0;
+  }
+
+  .behance-invite {
+    margin-top: 60px;
+    padding: 35px 25px;
+  }
+
+  .behance-button {
+    white-space: normal;
+  }
+
+  .contact {
+    padding: 80px 7%;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-height: calc(100dvh - 20px);
+  }
+
+  .modal-image {
+    max-height: 65dvh;
+  }
+
+  .modal-details {
+    padding: 22px;
+  }
+
+  .project-image::after {
+    opacity: 1;
+    transform: none;
+    bottom: 12px;
+    right: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVEGACIÓN -->
+
+<nav class="navbar">
+  <a href="#inicio" class="logo">
+    JULIO <span>VÉLEZ.</span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Abrir menú"
+    aria-expanded="false">
+    ☰
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#perfil">Perfil</a></li>
+    <li><a href="#enfoque">Enfoque</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#areas">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- INICIO -->
+
+<header class="hero" id="inicio">
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      Diseño gráfico · Portafolio creativo
+    </p>
+
+    <h1>
+      JULIO
+      <span>VÉLEZ.</span>
+    </h1>
+
+    <div class="hero-bottom">
+      <div>
+        <p class="hero-description">
+          Diseño ideas, construyo conceptos y desarrollo
+          soluciones visuales que conectan creatividad,
+          comunicación y funcionalidad.
+        </p>
+
+        <br>
+
+        <a href="#proyectos" class="button">
+          Explorar proyectos <span>↗</span>
+        </a>
+      </div>
+
+      <p class="hero-number">
+        TAMPICO, TAMPS. — MÉXICO<br>
+        PORTAFOLIO 2026 / 2027
+      </p>
+    </div>
+  </div>
+
+  <div class="hero-orbit">✳</div>
+</header>
+
+<!-- PERFIL -->
+
+<section class="section section-cream" id="perfil">
+
+  <div class="section-heading reveal">
+    <div>
+      <p class="section-label">01 / Sobre mí</p>
+      <h2>
+        Ideas que toman<br>
+        <em>forma visual.</em>
+      </h2>
+    </div>
+  </div>
+
+  <div class="profile-grid reveal">
+
+    <p class="profile-text">
+      Soy estudiante de <strong>Diseño Gráfico</strong>,
+      interesado en desarrollar propuestas visuales
+      que combinan creatividad, experimentación y comunicación.
+
+      Mi trabajo abarca diferentes áreas del diseño,
+      desde proyectos editoriales hasta identidad visual
+      y producción gráfica.
+    </p>
+
+    <div class="profile-side">
+      <span>Mi manera de diseñar</span>
+
+      <p>
+        Explorar, experimentar y encontrar
+        soluciones visuales con intención.
+      </p>
+
+      <span>Diseño con propósito ↗</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ENFOQUE -->
+
+<section class="section section-dark" id="enfoque">
+
+  <div class="section-heading reveal">
+    <div>
+      <p class="section-label">02 / Mi enfoque</p>
+      <h2>
+        Diseño en<br>
+        <em>movimiento.</em>
+      </h2>
+    </div>
+  </div>
+
+  <div class="focus-grid reveal">
+
+    <article class="focus-card">
+      <span class="number">01 — CONCEPTO</span>
+      <h3>Ideas con intención</h3>
+      <p>
+        El desarrollo de cada proyecto comienza
+        con una idea y una dirección visual
+        que le da sentido.
+      </p>
+    </article>
+
+    <article class="focus-card">
+      <span class="number">02 — EXPLORACIÓN</span>
+      <h3>Experimentación</h3>
+      <p>
+        Exploro formas, tipografías, colores
+        y recursos gráficos para construir
+        propuestas originales.
+      </p>
+    </article>
+
+    <article class="focus-card">
+      <span class="number">03 — PRODUCCIÓN</span>
+      <h3>Del concepto al resultado</h3>
+      <p>
+        Transformo ideas en piezas visuales
+        considerando sus materiales, medios
+        y aplicaciones.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- PROYECTOS DESTACADOS -->
+
+<section class="section projects-section" id="proyectos">
+
+  <div class="section-heading reveal">
+    <div>
+      <p class="section-label">
+        03 / Selección de trabajos
+      </p>
+
+      <h2>
+        Proyectos<br>
+        <em>destacados.</em>
+      </h2>
+    </div>
+
+    <p style="max-width:250px;line-height:1.7;font-size:14px;">
+      Una selección de proyectos y ejercicios
+      que reflejan mi proceso creativo.
+    </p>
+  </div>
+
+  <!-- FILTROS -->
+
+  <div class="project-filters reveal">
+    <button class="filter-btn active" data-filter="todos">Todos</button>
+    <button class="filter-btn" data-filter="editorial">Editorial</button>
+    <button class="filter-btn" data-filter="branding">Branding</button>
+    <button class="filter-btn" data-filter="publicidad">Publicidad</button>
+    <button class="filter-btn" data-filter="packaging">Packaging</button>
+    <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+  </div>
+
+  <!-- GALERÍA DE PROYECTOS -->
+
+  <div class="projects-grid reveal" id="projectsGrid">
+
+    <!--
+      Las 16 tarjetas se generan desde el JavaScript
+      que aparece al final de este mismo archivo.
+
+      Para cambiar una imagen, modifica su nombre
+      en la lista de proyectos del JavaScript.
+    -->
+
+  </div>
+
+  <!-- NUEVO APARTADO DE BEHANCE -->
+
+  <aside class="behance-invite reveal">
+
+    <div class="behance-content">
+
+      <p class="behance-label">
+        ¿QUIERES VER MÁS? / BEHANCE
+      </p>
+
+      <h3>
+        Te invito a conocer<br>
+        mi <em>portafolio completo.</em>
+      </h3>
+
+      <p class="behance-description">
+        Si quieres conocer más sobre mi trabajo,
+        te invito a explorar mi portafolio en Behance,
+        donde comparto proyectos de diseño gráfico,
+        identidad visual y procesos creativos.
+      </p>
+
+    </div>
+
+    <a
+      class="button behance-button"
+      href="https://www.behance.net/gallery/257627725/Branding-personal"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Ver mi portafolio en Behance
+      <span>↗</span>
+
+    </a>
+
+  </aside>
+
+</section>
+
+<!-- ÁREAS DE TRABAJO -->
+
+<section class="section section-green" id="areas">
+
+  <div class="section-heading reveal">
+    <div>
+      <p class="section-label">04 / Lo que hago</p>
+      <h2>
+        Áreas de<br>
+        <em>trabajo.</em>
+      </h2>
+    </div>
+  </div>
+
+  <div class="areas-grid reveal">
+
+    <div class="area">
+      <h3>Diseño editorial</h3>
+      <span>↗</span>
+    </div>
+
+    <div class="area">
+      <h3>Identidad visual</h3>
+      <span>↗</span>
+    </div>
+
+    <div class="area">
+      <h3>Redes sociales</h3>
+      <span>↗</span>
+    </div>
+
+    <div class="area">
+      <h3>Packaging</h3>
+      <span>↗</span>
+    </div>
+
+    <div class="area">
+      <h3>Publicidad</h3>
+      <span>↗</span>
+    </div>
+
+    <div class="area">
+      <h3>Fotografía</h3>
+      <span>↗</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+
+  <div class="contact-content reveal">
+
+    <p class="section-label" style="color:var(--dark);">
+      05 / Contacto
+    </p>
+
+    <h2>
+      Hagamos algo<br>
+      <em>interesante.</em>
+    </h2>
+
+    <p>
+      ¿Tienes un proyecto en mente?
+      Estoy abierto a conocer nuevas ideas
+      y colaborar en propuestas creativas.
+    </p>
+
+    <div class="contact-links">
+
+      <a href="mailto:Julio27santiago@gmail.com">
+        Julio27santiago@gmail.com ↗
+      </a>
+
+      <a
+        href="https://www.instagram.com/Juli0v3lez/"
+        target="_blank"
+        rel="noopener noreferrer">
+        Juli0v3lez ↗
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">
+    JULIO VÉLEZ.
+  </div>
+
+  <p>
+    Diseño gráfico · Tampico, Tamaulipas, México
+  </p>
+
+  <p>
+    © <span id="year"></span>
+    Todos los derechos reservados.
+  </p>
+
+</footer>
+
+<!-- MODAL DE PROYECTOS -->
+
+<div
+  class="modal"
+  id="projectModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+  aria-hidden="true">
+
+  <div class="modal-content">
+
+    <button
+      class="modal-close"
+      id="modalClose"
+      aria-label="Cerrar proyecto">
+      ×
+    </button>
+
+    <div class="modal-image-container">
+      <img
+        id="modalImage"
+        class="modal-image"
+        alt="">
+    </div>
+
+    <div class="modal-details">
+      <div class="modal-category" id="modalCategory"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/*
+  LISTA DE PROYECTOS
+
+  Las imágenes deben estar en la misma carpeta
+  que este archivo index.html.
+
+  Puedes modificar títulos, categorías,
+  imágenes y descripciones aquí.
+*/
+
+const projects = [
+  {
+    image: "3.jpg",
+    title: "Mercantus",
+    category: "branding",
+    type: "Identidad visual · Branding",
+    description: "Desarrollo de una propuesta de identidad visual y recursos gráficos para construir una comunicación coherente con la marca."
+  },
+  {
+    image: "4.jpg",
+    title: "Cosmos",
+    category: "branding",
+    type: "Branding · Diseño gráfico",
+    description: "Exploración gráfica de identidad, composición y lenguaje visual para una propuesta de marca."
+  },
+  {
+    image: "5.jpg",
+    title: "Tropika",
+    category: "publicidad",
+    type: "Publicidad · Dirección de arte",
+    description: "Propuesta visual publicitaria con énfasis en color, composición y comunicación de producto."
+  },
+  {
+    image: "6.jpg",
+    title: "Injuve",
+    category: "publicidad",
+    type: "Comunicación · Publicidad",
+    description: "Desarrollo de piezas gráficas y recursos de comunicación para un proyecto institucional."
+  },
+  {
+    image: "7.jpg",
+    title: "Mortero",
+    category: "branding",
+    type: "Branding · Identidad",
+    description: "Propuesta de identidad gráfica y aplicaciones visuales para una marca."
+  },
+  {
+    image: "8.jpg",
+    title: "Mortero",
+    category: "branding",
+    type: "Branding · Identidad",
+    description: "Aplicaciones de identidad visual del proyecto Mortero."
+  },
+  {
+    image: "9.jpg",
+    title: "Mortero",
+    category: "branding",
+    type: "Branding · Identidad",
+    description: "Aplicaciones gráficas y desarrollo de la identidad de Mortero."
+  },
+  {
+    image: "10.jpg",
+    title: "Gritos en Colectivos",
+    category: "editorial",
+    type: "Editorial · Composición",
+    description: "Proyecto editorial enfocado en la composición tipográfica, jerarquías y construcción de una narrativa visual."
+  },
+  {
+    image: "12.jpg",
+    title: "Catálogo",
+    category: "editorial",
+    type: "Diseño editorial · Maquetación",
+    description: "Diseño y organización de contenidos editoriales mediante retículas, tipografía y recursos gráficos."
+  },
+  {
+    image: "13.jpg",
+    title: "Wrapping",
+    category: "publicidad",
+    type: "Diseño aplicado · Publicidad",
+    description: "Propuesta de aplicación gráfica sobre superficies y soportes físicos."
+  },
+  {
+    image: "14.jpg",
+    title: "Wrapping",
+    category: "publicidad",
+    type: "Diseño aplicado · Publicidad",
+    description: "Aplicaciones y exploraciones visuales del proyecto Wrapping."
+  },
+  {
+    image: "8.jpg",
+    title: "Mortero",
+    category: "packaging",
+    type: "Packaging · Diseño aplicado",
+    description: "Aplicaciones de identidad gráfica del proyecto Mortero en soportes y empaques."
+  },
+  {
+    image: "9.jpg",
+    title: "Mortero",
+    category: "packaging",
+    type: "Packaging · Identidad",
+    description: "Aplicaciones gráficas de la marca Mortero sobre soportes físicos."
+  },
+  {
+    image: "15.jpg",
+    title: "Sesión Fotográfica",
+    category: "fotografia",
+    type: "Fotografía · Dirección visual",
+    description: "Exploración de encuadre, iluminación y composición para construir imágenes con intención visual."
+  },
+  {
+    image: "16.jpg",
+    title: "Sesión Fotográfica",
+    category: "fotografia",
+    type: "Fotografía · Dirección visual",
+    description: "Exploración de fotografía, encuadre y composición visual."
+  },
+  {
+    image: "17.jpg",
+    title: "Sesión Fotográfica",
+    category: "fotografia",
+    type: "Fotografía · Dirección visual",
+    description: "Trabajo fotográfico con énfasis en iluminación, encuadre y composición."
+  }
+];
+
+// CREAR LAS TARJETAS DE PROYECTOS
+
+const projectsGrid = document.getElementById('projectsGrid');
+
+projects.forEach((project, index) => {
+
+  const card = document.createElement('article');
+
+  card.className = 'project-card';
+  card.dataset.category = project.category;
+  card.tabIndex = 0;
+  card.setAttribute('role', 'button');
+  card.setAttribute('aria-label', 'Ver proyecto ' + project.title);
+
+  const imageContainer = document.createElement('div');
+  imageContainer.className = 'project-image';
+
+  const img = document.createElement('img');
+  img.src = project.image;
+  img.alt = project.title;
+  img.loading = 'lazy';
+
+  imageContainer.appendChild(img);
+
+  const info = document.createElement('div');
+  info.className = 'project-info';
+
+  const details = document.createElement('div');
+
+  const title = document.createElement('h3');
+  title.textContent = project.title;
+
+  const type = document.createElement('p');
+  type.textContent = project.type;
+
+  details.appendChild(title);
+  details.appendChild(type);
+
+  const number = document.createElement('span');
+  number.className = 'project-index';
+  number.textContent = String(index + 1).padStart(2, '0');
+
+  info.appendChild(details);
+  info.appendChild(number);
+
+  card.appendChild(imageContainer);
+  card.appendChild(info);
+
+  card.addEventListener('click', () => {
+    openProject(project);
+  });
+
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openProject(project);
+    }
+  });
+
+  projectsGrid.appendChild(card);
+
+});
+
+// MENÚ RESPONSIVE
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+
+  navLinks.classList.toggle('open');
+
+  const isOpen = navLinks.classList.contains('open');
+
+  menuToggle.textContent = isOpen ? '×' : '☰';
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.textContent = '☰';
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+
+});
+
+// FILTROS DE PROYECTOS
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    filterButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    projectCards.forEach(card => {
+
+      const matches =
+        filter === 'todos' ||
+        card.dataset.category === filter;
+
+      card.classList.toggle('hidden', !matches);
+
+    });
+
+  });
+
+});
+
+// MODAL CON IMAGEN COMPLETA
+
+const modal = document.getElementById('projectModal');
+const modalContent = modal.querySelector('.modal-content');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalCategory = document.getElementById('modalCategory');
+const modalDescription = document.getElementById('modalDescription');
+const modalClose = document.getElementById('modalClose');
+
+let previousFocus = null;
+
+function openProject(project) {
+
+  previousFocus = document.activeElement;
+
+  modalImage.src = project.image;
+  modalImage.alt = project.title;
+
+  modalTitle.textContent = project.title;
+  modalCategory.textContent = project.type;
+  modalDescription.textContent = project.description;
+
+  modalContent.scrollTop = 0;
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+
+  document.body.classList.add('modal-open');
+
+  modalClose.focus();
+
+}
+
+function closeModal() {
+
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+
+  document.body.classList.remove('modal-open');
+
+  modalImage.removeAttribute('src');
+
+  if (previousFocus && typeof previousFocus.focus === 'function') {
+    previousFocus.focus();
+  }
+
+}
+
+modalClose.addEventListener('click', closeModal);
+
+modal.addEventListener('click', event => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+document.addEventListener('keydown', event => {
+
+  if (!modal.classList.contains('open')) {
+    return;
+  }
+
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+
+  if (event.key === 'Tab') {
+
+    const focusable = modal.querySelectorAll(
+      'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+
+  }
+
+});
+
+// ANIMACIONES
+
+if ('IntersectionObserver' in window) {
+
+  const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+
+    });
+
+  }, {
+    threshold: 0.12
+  });
+
+  document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
+  });
+
+} else {
+
+  document.querySelectorAll('.reveal').forEach(element => {
+    element.classList.add('visible');
+  });
+
+}
+
+// AÑO AUTOMÁTICO
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
